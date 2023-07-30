@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nova Square", cursive;
+}
+
+body {
+  background: #88abff;
+}
+.wrapper {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 265px);
+  gap: 15px;
+}
+.wrapper li {
+  background: #fff;
+  list-style: none;
+  height: 250px;
+  border-radius: 5px;
+  padding: 15px 20px 20px;
+}
+.add-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.add-box .icon {
+  border: 2px dashed #88abff;
+  height: 78px;
+  width: 78px;
+  color: #88abff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 40px;
+}
+.add-box p {
+  color: #88abff;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.wrapper .note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.note p {
+  font-size: 22px;
+  font-weight: 600px;
+}
+.note .details {
+  max-height: 165px;
+  overflow-y: auto;
+}
+.note span {
+  color: #575757;
+  font-size: 16px;
+  display: block;
+  margin-top: 5px;
+}
+
+.note .bottom-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+.bottom-content span {
+  color: #6d6d6d;
+  font-size: 14px;
+}
+.bottom-content .setting i {
+  color: #6d6d6d;
+  font-size: 15px;
+  cursor: pointer;
+}
+.setting {
+  position: relative;
+}
+.setting .menu {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  padding: 5px 0;
+  background: #fff;
+  border-radius: 5px;
+  bottom: 0;
+  right: -5px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: transform 0.2s ease;
+}
+.setting.show .menu {
+  transform: scale(1);
+}
+.setting .menu li {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 1px solid red; */
+  /* background: #f5f5f5; */
+  cursor: pointer;
+  padding: 17px 15px;
+  font-size: 16px;
+}
+.menu li:hover {
+  background-color: #c4c0c0;
+}
+.menu li i {
+  padding-right: 8px;
+}
+.popup-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.popup-box .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  max-width: 400px;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  /* background: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-box,
+.popup-box .popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.popup-box.show,
+.popup-box.show .popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup .content {
+  width: calc(100% - 15px);
+  background: #fff;
+  border-radius: 5px;
+}
+.popup .content header {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content header p {
+  font-weight: 600;
+  font-size: 20px;
+}
+.content header i {
+  color: #8b8989;
+  cursor: pointer;
+  font-size: 23px;
+}
+.content form {
+  margin: 15px 25px 35px;
+}
+.content form .row {
+  margin-bottom: 20px;
+}
+form .row label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.content form :where(input, textarea) {
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 4px;
+  outline: none;
+  height: 50px;
+  font-size: 17px;
+  padding: 0 15px;
+}
+.content form textarea {
+  height: 150px;
+  resize: none;
+  padding: 8px 15px;
+}
+.content form button {
+  width: 100%;
+  height: 50px;
+  background: #6a93f8;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 4px;
+}
